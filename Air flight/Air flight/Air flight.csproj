@@ -1,0 +1,674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9B5CA3E5-B633-4F09-855C-C237ADEE72FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Air_flight</RootNamespace>
+    <AssemblyName>Air flight</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocX, Version=1.0.0.19, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocX.1.0.0.19\lib\net40\DocX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AttractionDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AttractionDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="CruiseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CruiseDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="CustomerBookingDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerBookingDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminAttraction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminAttraction.Designer.cs">
+      <DependentUpon>frmAdminAttraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminCruise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminCruise.Designer.cs">
+      <DependentUpon>frmAdminCruise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminCustomer.Designer.cs">
+      <DependentUpon>frmAdminCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminFlight.Designer.cs">
+      <DependentUpon>frmAdminFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminHotel.Designer.cs">
+      <DependentUpon>frmAdminHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminStaff.Designer.cs">
+      <DependentUpon>frmAdminStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateAttract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateAttract.Designer.cs">
+      <DependentUpon>frmAdminUpdateAttract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateCruise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateCruise.Designer.cs">
+      <DependentUpon>frmAdminUpdateCruise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateCustomer.Designer.cs">
+      <DependentUpon>frmAdminUpdateCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateFlight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateFlight.Designer.cs">
+      <DependentUpon>frmAdminUpdateFlight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateHotel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateHotel.Designer.cs">
+      <DependentUpon>frmAdminUpdateHotel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateStaff.Designer.cs">
+      <DependentUpon>frmAdminUpdateStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminUpdateVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminUpdateVehicle.Designer.cs">
+      <DependentUpon>frmAdminUpdateVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminVehicle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminVehicle.Designer.cs">
+      <DependentUpon>frmAdminVehicle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAir.Designer.cs">
+      <DependentUpon>frmAir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAllBookings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAllBookings.Designer.cs">
+      <DependentUpon>frmAllBookings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttraction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttraction.Designer.cs">
+      <DependentUpon>frmAttraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttractionBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttractionBooking.Designer.cs">
+      <DependentUpon>frmAttractionBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAttractionConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAttractionConfirm.Designer.cs">
+      <DependentUpon>frmAttractionConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBookConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBookConfirm.Designer.cs">
+      <DependentUpon>frmBookConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCruiseBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCruiseBooking.Designer.cs">
+      <DependentUpon>frmCruiseBooking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCruiseConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCruiseConfirm.Designer.cs">
+      <DependentUpon>frmCruiseConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCruiseTour.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCruiseTour.Designer.cs">
+      <DependentUpon>frmCruiseTour.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFlightConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlightConfirm.Designer.cs">
+      <DependentUpon>frmFlightConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHotelConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHotelConfirm.Designer.cs">
+      <DependentUpon>frmHotelConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHotelOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHotelOrder.Designer.cs">
+      <DependentUpon>frmHotelOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHotelSchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHotelSchedule.Designer.cs">
+      <DependentUpon>frmHotelSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIndirect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIndirect.Designer.cs">
+      <DependentUpon>frmIndirect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModuleSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModuleSelection.Designer.cs">
+      <DependentUpon>frmModuleSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrder.Designer.cs">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfile.Designer.cs">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTransport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTransport.Designer.cs">
+      <DependentUpon>frmTransport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVehicleConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehicleConfirm.Designer.cs">
+      <DependentUpon>frmVehicleConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDataSet2.cs">
+      <DependentUpon>HotelDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="HotelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ticketDataSet.cs">
+      <DependentUpon>ticketDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ticketDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ticketDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="ucSlideMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucSlideMenu.Designer.cs">
+      <DependentUpon>ucSlideMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehicleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VehicleDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminAttraction.resx">
+      <DependentUpon>frmAdminAttraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminCruise.resx">
+      <DependentUpon>frmAdminCruise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminCustomer.resx">
+      <DependentUpon>frmAdminCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminFlight.resx">
+      <DependentUpon>frmAdminFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminHotel.resx">
+      <DependentUpon>frmAdminHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminStaff.resx">
+      <DependentUpon>frmAdminStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateAttract.resx">
+      <DependentUpon>frmAdminUpdateAttract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateCruise.resx">
+      <DependentUpon>frmAdminUpdateCruise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateCustomer.resx">
+      <DependentUpon>frmAdminUpdateCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateFlight.resx">
+      <DependentUpon>frmAdminUpdateFlight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateHotel.resx">
+      <DependentUpon>frmAdminUpdateHotel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateStaff.resx">
+      <DependentUpon>frmAdminUpdateStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminUpdateVehicle.resx">
+      <DependentUpon>frmAdminUpdateVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminVehicle.resx">
+      <DependentUpon>frmAdminVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAir.resx">
+      <DependentUpon>frmAir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAllBookings.resx">
+      <DependentUpon>frmAllBookings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttraction.resx">
+      <DependentUpon>frmAttraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttractionBooking.resx">
+      <DependentUpon>frmAttractionBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAttractionConfirm.resx">
+      <DependentUpon>frmAttractionConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBookConfirm.resx">
+      <DependentUpon>frmBookConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCruiseBooking.resx">
+      <DependentUpon>frmCruiseBooking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCruiseConfirm.resx">
+      <DependentUpon>frmCruiseConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCruiseTour.resx">
+      <DependentUpon>frmCruiseTour.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlightConfirm.resx">
+      <DependentUpon>frmFlightConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHotelConfirm.resx">
+      <DependentUpon>frmHotelConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHotelOrder.resx">
+      <DependentUpon>frmHotelOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHotelSchedule.resx">
+      <DependentUpon>frmHotelSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIndirect.resx">
+      <DependentUpon>frmIndirect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModuleSelection.resx">
+      <DependentUpon>frmModuleSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrder.resx">
+      <DependentUpon>frmOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProfile.resx">
+      <DependentUpon>frmProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTransport.resx">
+      <DependentUpon>frmTransport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehicleConfirm.resx">
+      <DependentUpon>frmVehicleConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ucSlideMenu.resx">
+      <DependentUpon>ucSlideMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="AttractionDataSet1.xsc">
+      <DependentUpon>AttractionDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="AttractionDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AttractionDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="AttractionDataSet1.xss">
+      <DependentUpon>AttractionDataSet1.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CruiseDataSet.xsc">
+      <DependentUpon>CruiseDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CruiseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CruiseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CruiseDataSet.xss">
+      <DependentUpon>CruiseDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CustomerBookingDataSet.xsc">
+      <DependentUpon>CustomerBookingDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CustomerBookingDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerBookingDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="CustomerBookingDataSet.xss">
+      <DependentUpon>CustomerBookingDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HotelDataSet2.xsc">
+      <DependentUpon>HotelDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HotelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HotelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="HotelDataSet2.xss">
+      <DependentUpon>HotelDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ticketDataSet.xsc">
+      <DependentUpon>ticketDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ticketDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ticketDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="ticketDataSet.xss">
+      <DependentUpon>ticketDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="VehicleDataSet.xsc">
+      <DependentUpon>VehicleDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="VehicleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VehicleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="VehicleDataSet.xss">
+      <DependentUpon>VehicleDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Images\TT Logo\TT_Air.jpg" />
+    <None Include="bin\Images\TT Logo\TT_Attraction.jpg" />
+    <None Include="bin\Images\TT Logo\TT_Cruise.jpg" />
+    <None Include="bin\Images\TT Logo\TT_General.jpg" />
+    <None Include="bin\Images\TT Logo\TT_Hotel.jpg" />
+    <None Include="bin\Images\TT Logo\TT_Transport.jpg" />
+    <None Include="bin\Images\AttractionPhotos\AdventureCove.png" />
+    <None Include="bin\Images\AttractionPhotos\BlueMountain.png" />
+    <None Include="bin\Images\AttractionPhotos\BridgeClimb.png" />
+    <None Include="bin\Images\AttractionPhotos\Disneyland.png" />
+    <None Include="bin\Images\AttractionPhotos\DisneySea.png" />
+    <None Include="bin\Images\AttractionPhotos\MountFuji.png" />
+    <None Include="bin\Images\AttractionPhotos\NightSafari.png" />
+    <None Include="bin\Images\AttractionPhotos\OperaHouse.png" />
+    <None Include="bin\Images\AttractionPhotos\SEAAquarium.png" />
+    <None Include="bin\Images\AttractionPhotos\ShrimpFishing.png" />
+    <None Include="bin\Images\AttractionPhotos\SingaporeZoo.png" />
+    <None Include="bin\Images\AttractionPhotos\TaipeiTea.png" />
+    <None Include="bin\Images\AttractionPhotos\TokyoMorning.png" />
+    <None Include="bin\Images\AttractionPhotos\TraditionalChinese.png" />
+    <None Include="bin\Images\AttractionPhotos\TraditionalJapanese.png" />
+    <None Include="bin\Images\AttractionPhotos\UniversalStudios.png" />
+    <None Include="bin\Images\AttractionPhotos\Yangmingshan.png" />
+    <None Include="bin\Images\VehiclePhotos\car01.png" />
+    <None Include="bin\Images\VehiclePhotos\car02.png" />
+    <None Include="bin\Images\VehiclePhotos\car03.png" />
+    <None Include="bin\Images\VehiclePhotos\car04.png" />
+    <None Include="bin\Images\VehiclePhotos\car05.png" />
+    <None Include="bin\Images\VehiclePhotos\car06.png" />
+    <None Include="bin\Images\VehiclePhotos\car07.jpg" />
+    <None Include="bin\Images\VehiclePhotos\car08.jpg" />
+    <None Include="bin\Images\VehiclePhotos\car09.jpg" />
+    <None Include="bin\Images\VehiclePhotos\car10.jpg" />
+    <None Include="bin\Images\VehiclePhotos\car11.jpg" />
+    <None Include="bin\Images\VehiclePhotos\car12.jpg" />
+    <None Include="bin\Images\Staff Photos\Cheong.jpg" />
+    <None Include="bin\Images\Staff Photos\Fai.jpg" />
+    <None Include="bin\Images\Staff Photos\Fan.jpg" />
+    <None Include="bin\Images\Staff Photos\Han.jpg" />
+    <None Include="bin\Images\Staff Photos\Kam.jpg" />
+    <None Include="bin\Images\Staff Photos\Kuen.jpg" />
+    <None Include="bin\Images\Staff Photos\Lung.jpg" />
+    <None Include="bin\Images\Staff Photos\Ming.jpg" />
+    <None Include="bin\Images\Staff Photos\Ning.jpg" />
+    <None Include="bin\Images\Staff Photos\On.jpg" />
+    <None Include="bin\Images\Staff Photos\Shun.jpg" />
+    <None Include="bin\Images\Staff Photos\Tak.jpg" />
+    <None Include="bin\Images\Staff Photos\yum.jpg" />
+    <None Include="bin\x86\Debug\EquipPhotos\e05.png" />
+    <None Include="bin\x86\Debug\EquipPhotos\e01.PNG" />
+    <None Include="bin\x86\Debug\EquipPhotos\e03.PNG" />
+    <None Include="bin\x86\Debug\EquipPhotos\e02.PNG" />
+    <None Include="bin\x86\Debug\EquipPhotos\e04.PNG" />
+    <Content Include="Cruise.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="CustomerBooking.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\background_travel001.png" />
+    <None Include="Resources\Blue-Sky-Sea-Beach-Hd-Desktop-Wallpaper.jpg" />
+    <None Include="Resources\flight-smalltabletRetina.jpg" />
+    <None Include="Resources\bed_balcony_table_chairs_view_hotel_room_39688_3840x2400.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\search-images-9.png" />
+    <None Include="Resources\list-512.png" />
+    <None Include="Resources\001-512.png" />
+    <None Include="Resources\038422-glossy-black-icon-transport-travel-transportation-cruise-ship.png" />
+    <None Include="Resources\Airplane.png" />
+    <None Include="Resources\Car.png" />
+    <None Include="Resources\Clear_icon.svg.png" />
+    <None Include="Resources\hotel_home.jpg" />
+    <None Include="Resources\images.png" />
+    <None Include="Resources\login_in-512.png" />
+    <None Include="Resources\logout-512.png" />
+    <None Include="Resources\Ok-256.png" />
+    <None Include="Resources\report-3-xxl.png" />
+    <None Include="Resources\roadside.png" />
+    <None Include="Resources\undo-512.png" />
+    <None Include="Resources\200px-magnifying_glass_icon.png" />
+    <None Include="Resources\refresh-general_318-27897.png" />
+    <None Include="Resources\add-icon-76240.png" />
+    <None Include="Resources\upload-arrow_318-26670.png" />
+    <None Include="Resources\images1.jpg" />
+    <None Include="Resources\miniature-red-car-over-bulgaria-map-11376110.jpg" />
+    <None Include="Resources\LoginRed.jpg" />
+    <None Include="Resources\security.png" />
+    <None Include="Resources\Admin.png" />
+    <None Include="Resources\icon-camera-128.png" />
+    <None Include="Resources\home-512.png" />
+    <Content Include="Vehicle.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="bin\Images\TT_Transport.jpg" />
+    <Content Include="Attraction.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Hotel.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Staff.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ticketTailor_db.accdb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
